@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "watch": "vite --host --port 8000",
     "dev": "vite --host --port 8000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
