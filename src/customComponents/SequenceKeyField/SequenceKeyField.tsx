@@ -19,17 +19,18 @@ const SequenceKeyField = (props) => {
 
     const keyElements = 
         SEQUENCE_NUMBERS.map(key => (
-            <div 
+            <input
                 key={key.id} 
+                type={'text'}
                 id={`SQK-${key.id}`} 
                 draggable={true}
+                disabled={true}
+                value={key.value}
                 onDragStart={e => handleOnDragStart(e)} 
                 onDragOver={e => handleOnDragOver(e)}
                 onDrop={e => handleOnElementDrop(e)} 
-                className={`border-3 peer-hover:border-dashed text-xl font-alan border-black rounded-full h-10 w-10 flex justify-center items-center hover:bg-linear-to-r from-amber-500 via-orange-500 to-red-500 hover:text-white hover:scale-125 hover:transition-transform duration-300 ease-in-out hover:border-none`} 
-            >
-                {key.value}
-            </div>
+                className={`border-3 peer-hover:border-dashed text-xl font-alan border-black rounded-full h-10 w-10 text-center hover:bg-linear-to-r from-amber-500 via-orange-500 to-red-500 hover:text-white hover:scale-125 hover:transition-transform duration-300 ease-in-out hover:border-none`} 
+            />
         ));
 
     return (

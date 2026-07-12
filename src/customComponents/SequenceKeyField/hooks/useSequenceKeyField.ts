@@ -9,16 +9,16 @@ const useSequenceKeyField = () => {
             e.preventDefault();
         }
     
-        const handleOnElementDrop = (e: React.DragEvent<HTMLElement>) => {
+        const handleOnElementDrop = (e: React.DragEvent<HTMLInputElement>) => {
             e.preventDefault();
     
             const id = e.dataTransfer.getData("text");
-            const draggedElement = document.getElementById(id);
+            const draggedElement = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null;
     
             if (draggedElement) {
-                const initialElementValue: string = e.currentTarget.textContent;
-                e.currentTarget.textContent = draggedElement.textContent;
-                draggedElement.textContent = initialElementValue;
+                const initialElementValue: string = e.currentTarget.value;
+                e.currentTarget.value = draggedElement.value;
+                draggedElement.value = initialElementValue;
             }
         };
     

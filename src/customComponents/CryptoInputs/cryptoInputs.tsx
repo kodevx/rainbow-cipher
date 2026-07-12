@@ -16,7 +16,7 @@ const CryptoInputs: React.FC<CryptoInputProps> = (props) => {
      } = useCryptoInputs();
 
     return (
-        <div className={'font-louis border border-2 border-lime-600 flex justify-center items-center p-10'}>
+        <div className={'font-louis border-2 border-lime-600 flex justify-center items-center p-10'}>
             <Formik
                 validateOnChange={false}
                 initialValues={initialValues}
