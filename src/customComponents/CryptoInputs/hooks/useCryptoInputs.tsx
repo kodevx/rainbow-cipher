@@ -1,28 +1,17 @@
-import React from 'react';
-import type { 
-    CryptoFieldInitialValues, 
-    CryptoFieldsValidationType 
-} from '../types/cryptoInputs';
-
-import { validateTextfield } from '../../../utils/formValidations';
+import type { CryptoFieldInitialValues } from '../types/cryptoInputs';
 
 const useCryptoInputs = () => {
 
-    const handleValidation = React.useCallback((values: CryptoFieldInitialValues) => {
-        const errors: CryptoFieldsValidationType = {};
-
-        errors.plainText = validateTextfield(values.plainText)
-
-        return errors;
-    }, []);
-
     const initialValues: CryptoFieldInitialValues = {
-        plainText: ''
+        plainText: '',
+        SQK1: 1,
+        SQK2: 2,
+        SQK3: 3,
+        SQK4: 4
     }
 
     return {
-        initialValues,
-        handleValidation
+        initialValues
     }
 }
 

@@ -1,29 +1,34 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-
-import SequenceKeyField from '../SequenceKeyField';
-import useCryptoInputs from './hooks/useCryptoInputs';
-
 import type { CryptoInputProps } from './types/cryptoInputs';
+
+import Button from '../../components/common/Button';
+import SequenceKeyFields from '../SequenceKeyField';
+
+import { validatePlainTextfield } from '../../utils/formValidations';
+
+import useCryptoInputs from './hooks/useCryptoInputs';
 
 const CryptoInputs: React.FC<CryptoInputProps> = (props) => {
 
     const { handleSubmit } = props;
 
     const { 
-        initialValues,
-        handleValidation,
+        initialValues
      } = useCryptoInputs();
 
     return (
         <div className={'font-louis border-2 border-lime-600 flex justify-center items-center p-10'}>
             <Formik
-                validateOnChange={false}
                 initialValues={initialValues}
-                validate={handleValidation}
-                onSubmit={(values) => console.log("values: ",values) /* handleSubmit */}
+                validateOnChange={true}
+                validateOnBlur={true}
+                onSubmit={(values, actions) => {
+                    console.log("Formik callback values: ",values);
+                    actions.setSubmitting(false);
+                }}
             >
-                {({ touched, errors, isValidating, handleBlur, handleChange, handleSubmit }) => (
+                {({ touched, errors, isSubmitting, handleBlur, handleChange, isValidating }) => (
                     <Form>
                         <div>
                             <Field
@@ -31,22 +36,27 @@ const CryptoInputs: React.FC<CryptoInputProps> = (props) => {
                                 type={'text'}
                                 onBlur={handleBlur}
                                 onChange={handleChange}
+                                validate={validatePlainTextfield}
                                 placeholder={'Enter the text to encrypt/decrypt ...'}
                                 className={'h-16 w-135 rounded-full shadow-2xl p-5 outline-none text-2xl'}
                             />
                             <div className={'p-5 mt-2'}>
-                                {touched.plainText && errors.plainText && <div className={'text-xl text-red-500'}>{errors.plainText}</div>}
+                                {errors.plainText && touched.plainText && <div className={'text-xl text-orange-500'}>{errors.plainText}</div>}
                             </div>
                         </div>
                         {/* <EncryptionButtons /> */}
-                        <div>
-                            <SequenceKeyField 
-                                name={'sequenceKey'}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                placeholder={'Enter the Sequence Key'}
-                            />
-                        </div>
+                        <SequenceKeyFields
+                            required={true}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                        <Button 
+                            type={'submit'}
+                            disabled={isSubmitting || isValidating} 
+                            style={'p-5 rounded-full border-3 border-black'}
+                        >
+                            SUBMIT
+                        </Button>
                     </Form>
                 )}
             </Formik>
