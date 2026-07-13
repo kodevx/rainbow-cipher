@@ -1,5 +1,9 @@
 const SUCCESS = null;
 
-export const validateTextfield = (value: string | null): string | null => {
-    return value !== '' && value !== null ? SUCCESS : 'This field is required.';
+export const validatePlainTextfield = (value: string): string | null => {
+    const regex = /[\d+|\w]$/gm;
+
+    return value !== '' && value !== null 
+                ? regex.test(value) ? SUCCESS : 'Special characters are not allowed.'
+                : 'This field is required.';
 }
