@@ -1,4 +1,4 @@
-export interface CryptoFieldInitialValues {
+export interface CryptoFieldInputValues {
     plainText: string
     SQK1: number | string
     SQK2: number | string
@@ -7,7 +7,8 @@ export interface CryptoFieldInitialValues {
 }
 
 export interface CryptoInputProps {
-    handleSubmit: () => void
+    handleEncryption: (values: CryptoFieldInputValues) => void,
+    handleDecryption: (values: CryptoFieldInputValues) => void 
 }
 
 export interface CryptoFieldsValidationType {
