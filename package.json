@@ -6,6 +6,7 @@
   "scripts": {
     "watch": "vite --host --port 8000",
     "dev": "vite --host --port 8000",
+    "test": "vitest",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -16,6 +17,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.4",
+    "vitest": "^4.1.10",
     "zustand": "^5.0.14"
   },
   "devDependencies": {
