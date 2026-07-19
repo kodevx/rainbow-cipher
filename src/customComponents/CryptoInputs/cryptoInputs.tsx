@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import type { CryptoInputProps } from './types/cryptoInputs';
 
-import Button from '../../components/common/Button';
 import EncryptionButtons from '../../customComponents/EncryptedButtons';
 import SequenceKeyFields from '../SequenceKeyField';
 
