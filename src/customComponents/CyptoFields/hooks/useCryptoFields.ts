@@ -6,12 +6,17 @@ import type { CryptoFieldInputValues } from '../../CryptoInputs/types/cryptoInpu
 import {  
     formatSequenceKeys,
     handleColorToAlphabetList,
-    handleRainbowCipherEncryption
+    handleRainbowCipherEncryption,
+    handleRainbowCipherDecryption
 } from '../../../utils/encryptionUtils';
 
 const useCryptoFields = () => {
 
-    const { cipherText, setCipherText } = useStore();
+    const { 
+        cryptoData, 
+        setCipherText, 
+        setPlainText 
+    } = useStore();
 
     const handleEncryption = React.useCallback(
         (values: CryptoFieldInputValues) => {
@@ -27,8 +32,6 @@ const useCryptoFields = () => {
 
                 const colorToAlphabetList = handleColorToAlphabetList(sequenceKeyList);
             
-                console.log("colorToAlphabetList: ",colorToAlphabetList);
-
                 const cipherText = 
                     handleRainbowCipherEncryption(
                         values.plainText, 
@@ -46,16 +49,34 @@ const useCryptoFields = () => {
     );
 
     const handleDecryption = React.useCallback(
-        (values) => {
-            console.log("form values: ", values);
-            // let sequenceKeyList = 
-            // handleDecryption
+        (values: CryptoFieldInputValues) => {
+                console.log("form values: ", values);
+
+                const sequenceKeyList = formatSequenceKeys(
+                    values.SQK1, 
+                    values.SQK2, 
+                    values.SQK3, 
+                    values.SQK4
+                );
+
+                const colorToAlphabetList = handleColorToAlphabetList(sequenceKeyList);
+            
+                const plainText = 
+                    handleRainbowCipherDecryption(
+                        values.plainText,
+                        sequenceKeyList,
+                        colorToAlphabetList
+                    );
+
+                setPlainText(plainText);
+
+                console.log("Plain Text: ",plainText);
         },
         []
     );
 
     return {
-        cryptoOutputText: cipherText,
+        cryptoOutputText: cryptoData,
         handleEncryption,
         handleDecryption 
     }

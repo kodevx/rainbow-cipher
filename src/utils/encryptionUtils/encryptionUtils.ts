@@ -106,3 +106,54 @@ export const handleRainbowCipherEncryption = (
     return cipherText;
 }
 
+export const handleRainbowCipherDecryption = (
+    cipherText: string,
+    sequenceKey: number[],
+    colorToAlphabetList: ColorToAlphabetType[]
+): string => {
+
+    let plainText: string = '';
+    const textLength = cipherText.length;
+
+    // console.log("colorToAlphabet: ",colorToAlphabetList);
+
+    for(let i = 0; i < textLength; i+= 2) {
+
+        const colorCodeToDecode = cipherText.slice(i, i + 2);
+        // console.log("colorCodeToDecode: ", colorCodeToDecode, typeof colorCodeToDecode)
+        // console.log("sequenceKeyList: ", sequenceKey, typeof sequenceKey, colorCodeToDecode.charAt(1))
+        
+        const alphabetInSeriesIndex = 
+            sequenceKey.indexOf(
+                Number(colorCodeToDecode.charAt(1))
+            );
+
+        // console.log("alphabetInSeriesIndex: ",alphabetInSeriesIndex);
+
+        const colorToAsciiSeries = colorToAlphabetList[alphabetInSeriesIndex];
+
+        // console.log("colorToAsciiSeries: ",colorToAsciiSeries);
+
+        const firstColorCodeKey = Object.keys(colorToAsciiSeries)[0] as ColorsCodes;
+        const secondColorCodekey = Object.keys(colorToAsciiSeries)[1] as ColorsCodes;
+
+        if(colorCodeToDecode === firstColorCodeKey) {
+            if(colorToAsciiSeries[firstColorCodeKey]) {
+                plainText+=`${String.fromCharCode(colorToAsciiSeries[firstColorCodeKey][0])}`
+            }
+        } else if(colorCodeToDecode === secondColorCodekey){
+            if (colorToAsciiSeries[secondColorCodekey]) {
+                plainText+=`${String.fromCharCode(colorToAsciiSeries[secondColorCodekey][0])}`
+            }
+        } else {
+            const colorCode = colorCodeToDecode.charAt(0);
+            const asciiOfColorCode = colorToAsciiSeries[firstColorCodeKey]![0] + RAINBOW_COLORS.indexOf(colorCode);
+            plainText+=`${String.fromCharCode(asciiOfColorCode)}`
+        }
+    }
+
+    // console.log("Decrypted Plain text: ",plainText);
+
+    return plainText;
+}
+

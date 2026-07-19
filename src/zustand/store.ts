@@ -3,14 +3,20 @@ import { create } from 'zustand';
 import type { StoreType } from './storeTypes/store';
 
 export const useStore = create<StoreType>()((set) => ({
-    plainText: '',
-    cipherText: '',
+    cryptoData: '',
     colorToAlphabetList: {},
     
-    setCipherText: (cipherText: string) => {
+    setCipherText: (payload: string) => {
         set((state) => ({ 
             ...state,
-            cipherText
+            cryptoData: payload
         }))
-    }
+    },
+
+    setPlainText: (payload: string) => {
+        set((state) => ({ 
+            ...state,
+            cryptoData: payload
+        }))
+    },
 }));

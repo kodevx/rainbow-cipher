@@ -1,6 +1,9 @@
 import { test, expect } from 'vitest';
 import { handleColorToAlphabetList } from './encryptionUtils';
-import { handleRainbowCipherEncryption } from './encryptionUtils';
+import { 
+    handleRainbowCipherEncryption, 
+    handleRainbowCipherDecryption 
+} from './encryptionUtils';
 
 const PLAIN_TEXT = 'gnuz';
 const SEQUENCE_KEY = [2,1,3,4]
@@ -34,12 +37,15 @@ test(
     }
 );
 
-// test(
-//     `${PLAIN_TEXT} Decryption with Sequence Key (${SEQUENCE_KEY[0]}, ${SEQUENCE_KEY[1]}, ${SEQUENCE_KEY[2]}, ${SEQUENCE_KEY[4]})`,
-//     () => {
-//         // const colorToAlphabetList = handleColorToAlphabetList(SEQUENCE_KEY);
-//         expect(
-//             handleRainbowCipherEncryption(CIPHER_TEXT, colorToAlphabetList)
-//         ).toBe(PLAIN_TEXT)
-//     }
-// );
+test(
+    `${CIPHER_TEXT} Decryption with Sequence Key (${SEQUENCE_KEY[0]}, ${SEQUENCE_KEY[1]}, ${SEQUENCE_KEY[2]}, ${SEQUENCE_KEY[3]})`,
+    () => {
+        expect(
+            handleColorToAlphabetList(SEQUENCE_KEY)
+        ).toStrictEqual(colorToAlphabetList)
+
+        expect(
+            handleRainbowCipherDecryption(CIPHER_TEXT, SEQUENCE_KEY, colorToAlphabetList)
+        ).toBe(PLAIN_TEXT.toUpperCase())
+    }
+);

@@ -25,7 +25,7 @@ const SequenceKeyField: React.FC<SequenceKeyFieldType> = (props) => {
                 draggable={true}
                 readOnly={true}
                 defaultValue={sequenceKey.value}
-                onDragStart={(e: React.DragEvent<HTMLDivElement>) => {handleOnDragStart(e)}} 
+                onDragStart={(e: React.DragEvent<HTMLDivElement>) => handleOnDragStart(e)} 
                 onDragOver={(e: React.DragEvent<HTMLDivElement>) => handleOnDragOver(e)}
                 onDrop={(e: React.DragEvent<HTMLInputElement>) => handleOnElementDrop(e)} 
                 className={`border-3 text-xl font-alan border-black rounded-full h-10 w-10 text-center hover:border-0 hover:text-white hover:scale-125 hover:transition-transform duration-300 ease-in-out hover:bg-linear-to-r from-amber-500 via-orange-500 to-red-500 cursor-grab outline-none`}
