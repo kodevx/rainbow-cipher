@@ -14,6 +14,7 @@ const useCryptoFields = () => {
 
     const { 
         cryptoData, 
+        isEncrypted,
         setCipherText, 
         setPlainText 
     } = useStore();
@@ -21,7 +22,7 @@ const useCryptoFields = () => {
     const handleEncryption = React.useCallback(
         (values: CryptoFieldInputValues) => {
             try {
-                console.log("form values: ", values);
+                // console.log("form values: ", values);
 
                 const sequenceKeyList = formatSequenceKeys(
                     values.SQK1, 
@@ -39,10 +40,9 @@ const useCryptoFields = () => {
                     );
 
                 setCipherText(cipherText);
-
-                console.log("Cipher Text: ",cipherText);
+                // console.log("Cipher Text: ",cipherText);
             } catch(error) {
-                console.log("Encryption Error: ",error);
+                console.log("Text Encryption Error: ",error);
             }
         },
         [setCipherText]
@@ -50,7 +50,8 @@ const useCryptoFields = () => {
 
     const handleDecryption = React.useCallback(
         (values: CryptoFieldInputValues) => {
-                console.log("form values: ", values);
+            try {
+                // console.log("form values: ", values);
 
                 const sequenceKeyList = formatSequenceKeys(
                     values.SQK1, 
@@ -61,22 +62,27 @@ const useCryptoFields = () => {
 
                 const colorToAlphabetList = handleColorToAlphabetList(sequenceKeyList);
             
+                const formattedText = values.plainText.replace(/ +/g, "")
+
                 const plainText = 
                     handleRainbowCipherDecryption(
-                        values.plainText,
+                        formattedText,
                         sequenceKeyList,
                         colorToAlphabetList
                     );
 
                 setPlainText(plainText);
-
-                console.log("Plain Text: ",plainText);
+                // console.log("Plain Text: ",plainText);
+            } catch(error) {
+                console.log("Text Decryption Errors: ",error);
+            }
         },
         []
     );
 
     return {
         cryptoOutputText: cryptoData,
+        isEncrypted,
         handleEncryption,
         handleDecryption 
     }
