@@ -4,11 +4,13 @@ import type { StoreType } from './storeTypes/store';
 
 export const useStore = create<StoreType>()((set) => ({
     cryptoData: '',
+    isEncrypted: false,
     colorToAlphabetList: {},
     
     setCipherText: (payload: string) => {
         set((state) => ({ 
             ...state,
+            isEncrypted: true,
             cryptoData: payload
         }))
     },
@@ -16,6 +18,7 @@ export const useStore = create<StoreType>()((set) => ({
     setPlainText: (payload: string) => {
         set((state) => ({ 
             ...state,
+            isEncrypted: false,
             cryptoData: payload
         }))
     },

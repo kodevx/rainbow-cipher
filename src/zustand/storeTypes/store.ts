@@ -7,7 +7,8 @@ export type ColorToAlphabetType = {
 }
 
 export interface StoreType {
-    cryptoData: string,
+    cryptoData: string
+    isEncrypted: boolean
     setCipherText: (data: string) => void
     setPlainText: (data: string) => void
 }
