@@ -7,12 +7,12 @@ const SEQUENCE_KEY = [1,2,3,4]
 
 const rainbowColorStyles = {
     'V': 'text-violet-500',
-    'I': 'text-indigo-400',
-    'B': 'text-amber-700',
+    'I': 'text-indigo-600',
+    'B': 'text-blue-400',
     'G': 'text-emerald-500',
     'Y': 'text-yellow-400',
     'O': 'text-orange-500',
-    'R': 'text-red-500',
+    'R': 'text-red-600',
 }
 
 const getRainbowColorToAsciiCodeMappings = () => {
