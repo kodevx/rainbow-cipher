@@ -81,7 +81,7 @@ const getRainbowColorToAsciiCodeMappings = () => {
                     </tbody>
                 </table>
                 <div className={'flex justify-center mt-16 text-2xl'}>
-                    <div className={'border-4 border-blue-500 border-dashed flex justify-center py-2 px-5 rounded-full'}>
+                    <div className={'border-4 border-blue-500 border-dashed flex justify-center py-2 px-5 rounded-full transition-transform duration-500 hover:transition-transform hover:duration-300 hover:ease-in-out hover:scale-150'}>
                         {sequenceNumber}
                     </div>
                 </div>
