@@ -12,7 +12,7 @@ const rainbowColorStyles = {
     'G': 'text-emerald-500',
     'Y': 'text-yellow-400',
     'O': 'text-orange-500',
-    'R': 'text-red-600',
+    'R': 'text-red-600'
 }
 
 const getRainbowColorToAsciiCodeMappings = () => {
