@@ -36,13 +36,13 @@ const CryptoOutputs: React.FC<CryptoOutputsType> = (props) => {
             : outputText
 
     return (
-        <div className={'font-louis mt-15 border-pink-300'}>
+        <div className={'font-louis mt-12 xl:mt-15 border-pink-300'}>
             <TextArea 
                 content={textElements}
                 placeholder={'Enter text to either see the encrypted/decrypted text ...'}
                 styles={{
-                    root: 'h-120 w-250 p-10 text-3xl font-700 rounded-xl border-2 border-orange-200 shadow-2xl flex overflow-auto',
-                    placeholder: 'text-2xl text-gray-400'
+                    root: 'h-70 lg:h-96 xl:h-120 w-90 lg:w-180 xl:w-250 p-4 xl:p-10 text-3xl font-700 rounded-xl border-2 border-orange-200 shadow-2xl flex overflow-auto',
+                    placeholder: 'text-lg xl:text-2xl text-gray-400'
                 }}
             />
         </div>

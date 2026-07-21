@@ -5,7 +5,7 @@ const Header = (props) => {
 
     return (
         <div className={'pt-30 pb-15 flex justify-center items-center'}>
-            <div className={'text-4xl'}>
+            <div className={'text-2xl xl:text-4xl'}>
                 <Link to={'/'} className={'font-louis'}>
                     <span className={'mr-4'}>R A i N B O W </span> 
                     <span>C i P H E R</span>

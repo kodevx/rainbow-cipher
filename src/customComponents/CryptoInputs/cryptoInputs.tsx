@@ -42,7 +42,7 @@ const CryptoInputs: React.FC<CryptoInputProps> = (props) => {
                                     onChange={handleChange}
                                     validate={validatePlainTextfield}
                                     placeholder={'Enter the text to encrypt/decrypt ...'}
-                                    className={'h-16 w-180 rounded-full shadow-2xl border-pink-300 p-5 outline-none text-2xl'}
+                                    className={'h-5 lg:h-16 w-96 lg:w-180 rounded-full shadow-2xl border-pink-300 p-5 outline-none text-sm lg:text-xl xl:text-2xl'}
                                 />
                                 <div className={'absolute right-3'}>
                                     <EncryptionButtons 
