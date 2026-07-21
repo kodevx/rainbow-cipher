@@ -103,14 +103,6 @@ const AboutRainbowCipher = () => {
 
     return (
         <div className={'font-louis p-10'}>
-            {/* <div className={'flex justify-center items-center mb-40 mt-16'}>
-                <div className={'text-4xl tracking-widest'}>
-                    About <span className={''}>R A I N B O W  C I P H E R</span>
-                </div>
-                <sup className={'ml-3'}>
-                    <img src={INFO_ICON} className={'h-6 w-6'} />
-                </sup>
-            </div> */}
             <div className={'flex justify-between items-center mb-10 mt-16'}>
                 {tableElements}
             </div>

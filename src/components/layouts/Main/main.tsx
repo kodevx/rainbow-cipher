@@ -7,7 +7,7 @@ interface MainLayoutProps {
 const Main: React.FC<MainLayoutProps> = (props) => {
 
     return (
-        <div className={'h-screen'}>
+        <div className={'h-full mb-20'}>
             {props.children}
         </div>
     )
