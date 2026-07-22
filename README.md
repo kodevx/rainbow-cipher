@@ -12,7 +12,7 @@ Store: **Zustand**
 
 ### Rainbow Series Cipher Table 🫆
 
-![alt text](https://github.com/kodevx/rainbow-cipher/blob/main/public/screenshots/rctable.png?raw=true)
+![alt text](https://github.com/kodevx/rainbow-cipher/blob/main/public/screenshots/rc-table.png?raw=true)
 
 
 
