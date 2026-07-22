@@ -149,8 +149,12 @@ const AboutRainbowCipher = () => {
                                 <sub>3</sub>
                             </div>
                             <div className={'mr-2'}>
-                                <span>Y</span>
-                                <sub>1</sub>
+                                <span>V</span>
+                                <sub>2</sub>
+                            </div>
+                            <div className={'mr-2'}>
+                                <span>R</span>
+                                <sub>2</sub>
                             </div>
                             <div className={'mr-2'}>
                                 <span>G</span>
