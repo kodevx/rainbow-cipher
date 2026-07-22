@@ -19,11 +19,13 @@ const useCryptoFields = () => {
         setPlainText 
     } = useStore();
 
+    const [isBusy, setIsBusy] = React.useState<boolean>(false);
+
     const handleEncryption = React.useCallback(
         (values: CryptoFieldInputValues) => {
             try {
+                setIsBusy(true);
                 // console.log("form values: ", values);
-
                 const sequenceKeyList = formatSequenceKeys(
                     values.SQK1, 
                     values.SQK2, 
@@ -43,14 +45,17 @@ const useCryptoFields = () => {
                 // console.log("Cipher Text: ",cipherText);
             } catch(error) {
                 console.log("Text Encryption Error: ",error);
+            } finally {
+                setTimeout(() => setIsBusy(false), 900);
             }
         },
-        [setCipherText]
+        [setCipherText, setIsBusy]
     );
 
     const handleDecryption = React.useCallback(
         (values: CryptoFieldInputValues) => {
             try {
+                setIsBusy(true);
                 // console.log("form values: ", values);
 
                 const sequenceKeyList = formatSequenceKeys(
@@ -75,16 +80,19 @@ const useCryptoFields = () => {
                 // console.log("Plain Text: ",plainText);
             } catch(error) {
                 console.log("Text Decryption Errors: ",error);
+            } finally {
+                setTimeout(() => setIsBusy(false), 900);
             }
         },
-        []
+        [setIsBusy, setPlainText]
     );
 
     return {
+        isBusy,
         cryptoOutputText: cryptoData,
         isEncrypted,
         handleEncryption,
-        handleDecryption 
+        handleDecryption, 
     }
 }
 

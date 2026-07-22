@@ -1,6 +1,7 @@
 
 export interface CryptoOutputsType {
     outputText: string
+    isBusy: boolean
     isEncrypted: boolean
 
 }

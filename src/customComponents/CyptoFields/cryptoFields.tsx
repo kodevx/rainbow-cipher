@@ -8,6 +8,7 @@ import useCryptoFields from './hooks/useCryptoFields';
 const CryptoFields = (): React.ReactNode => {
 
     const {
+        isBusy,
         isEncrypted,
         cryptoOutputText,
         handleEncryption,
@@ -21,6 +22,7 @@ const CryptoFields = (): React.ReactNode => {
                 handleDecryption={handleDecryption} 
             />
             <CryptoOutputs 
+                isBusy={isBusy}
                 isEncrypted={isEncrypted}
                 outputText={cryptoOutputText} 
             />

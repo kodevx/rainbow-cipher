@@ -1,17 +1,11 @@
 import React from 'react';
-import { RAINBOW_COLORS } from '../../constants/constants';
 
-const SEQUENCE_KEY = [1,2,3,4]
+import { 
+    RAINBOW_COLORS, 
+    RAINBOW_COLOR_STYLES, 
+    SEQUENCE_KEY 
+} from '../../constants/constants';
 
-const rainbowColorStyles = {
-    'V': 'text-violet-500',
-    'I': 'text-indigo-600',
-    'B': 'text-blue-400',
-    'G': 'text-emerald-500',
-    'Y': 'text-yellow-400',
-    'O': 'text-orange-500',
-    'R': 'text-red-600'
-}
 
 const getRainbowColorToAsciiCodeMappings = () => {
 
@@ -51,7 +45,7 @@ const getRainbowColorToAsciiCodeMappings = () => {
                                     <tr key={`${rainbowColor}${index}`} className={'text-3xl'}>
                                         <td className={'border-r-2 border-gray-300'}>
                                             <div className={'flex justify-center'}>
-                                                <div className={`${rainbowColorStyles[rainbowColor]}`}>
+                                                <div className={`${RAINBOW_COLOR_STYLES[rainbowColor]}`}>
                                                     <span>
                                                         {rainbowColor}
                                                     </span>
@@ -143,31 +137,31 @@ const AboutRainbowCipher = () => {
                 <div className={'flex-col'}>
                     <div className={'flex justify-center text-4xl lg:text-4xl xl:text-3xl'}>
                         <div className={'flex'}>
-                            <div className={`mr-2 ${rainbowColorStyles['B']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['B']}`}>
                                 <span>B</span>
                                 <sub>2</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['V']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['V']}`}>
                                 <span>V</span>
                                 <sub>3</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['V']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['V']}`}>
                                 <span>V</span>
                                 <sub>2</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['R']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['R']}`}>
                                 <span>R</span>
                                 <sub>2</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['G']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['G']}`}>
                                 <span>G</span>
                                 <sub>1</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['V']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['V']}`}>
                                 <span>V</span>
                                 <sub>3</sub>
                             </div>
-                            <div className={`mr-2 ${rainbowColorStyles['Y']}`}>
+                            <div className={`mr-2 ${RAINBOW_COLOR_STYLES['Y']}`}>
                                 <span>Y</span>
                                 <sub>1</sub>
                             </div>
