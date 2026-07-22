@@ -2,13 +2,16 @@
 
 ### A web app which encrypts/decrypts any text using rainbow series table.
 
+
 ### Tech Stack 🧑🏻‍💻
 Frontend: **React, Typescript, Vite**
 Store: **Zustand**
 
-### Rainbow Cipher Encryption/Decryption Table 🫆
+
+### Rainbow Series Cipher Table 🫆
 
 ![alt text](https://github.com/kodevx/rainbow-cipher/blob/main/public/screenshots/rctable.png?raw=true)
+
 
 ### Design UI/UX 👩🏼‍🎨
 
@@ -17,3 +20,4 @@ Store: **Zustand**
 
 #### Mobile
 ![alt text](https://github.com/kodevx/rainbow-cipher/blob/main/public/screenshots/mobile.png?raw=true)
+
