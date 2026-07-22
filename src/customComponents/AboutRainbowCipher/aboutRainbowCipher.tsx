@@ -6,7 +6,6 @@ import {
     SEQUENCE_KEY 
 } from '../../constants/constants';
 
-
 const getRainbowColorToAsciiCodeMappings = () => {
 
     const tableElements: React.ReactNode[] = [];

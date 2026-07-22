@@ -1,5 +1,5 @@
 // const SEQUENCE_KEY = [1,2,3,4];
-import { ALPHABET_TO_ASCII_LIST } from "../../constants/constants";
+import { ALPHABET_TO_ASCII_LIST, type RainbowColor } from "../../constants/constants";
 import { RAINBOW_COLORS } from "../../constants/constants";
 
 type ColorsCodes = 'V1'|'R1'|'V2'|'R2'|'V3'|'R3'|'V4'|'Y1'|'Y2'|'Y3'|'Y4';
@@ -146,7 +146,7 @@ export const handleRainbowCipherDecryption = (
                 plainText+=`${String.fromCharCode(colorToAsciiSeries[secondColorCodekey][0])}`
             }
         } else {
-            const colorCode = colorCodeToDecode.charAt(0);
+            const colorCode = colorCodeToDecode.charAt(0) as RainbowColor;
             const asciiOfColorCode = colorToAsciiSeries[firstColorCodeKey]![0] + RAINBOW_COLORS.indexOf(colorCode);
             plainText+=`${String.fromCharCode(asciiOfColorCode)}`
         }

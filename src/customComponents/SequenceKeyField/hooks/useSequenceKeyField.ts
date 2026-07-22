@@ -1,10 +1,10 @@
 import { useFormikContext } from "formik";
 
-import type { CryptoFieldInitialValues } from "../../CryptoInputs/types/cryptoInputs";
+import type { CryptoFieldInputValues } from "../../CryptoInputs/types/cryptoInputs";
 
 const useSequenceKeyField = () => {
 
-    const { setFieldValue, values } = useFormikContext<CryptoFieldInitialValues>();
+    const { setFieldValue, values } = useFormikContext<CryptoFieldInputValues>();
 
     const handleOnDragStart = (e: React.DragEvent<HTMLElement>) => {
         e.dataTransfer.setData("text", e.currentTarget.id);
@@ -31,8 +31,8 @@ const useSequenceKeyField = () => {
             draggedElement.value = tempValue;
 
             // Update the formik state values of the swapped fields
-            const currentElementId = e.currentTarget.id as keyof CryptoFieldInitialValues;
-            const draggedElementId = draggedElement.id as keyof CryptoFieldInitialValues;
+            const currentElementId = e.currentTarget.id as keyof CryptoFieldInputValues;
+            const draggedElementId = draggedElement.id as keyof CryptoFieldInputValues;
 
             const value1 = values[currentElementId];
             const value2 = values[draggedElementId];

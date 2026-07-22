@@ -1,4 +1,5 @@
-export const RAINBOW_COLORS = ['V','I','B','G','Y','O','R'];
+export type RainbowColor = 'V' | 'I' | 'B' | 'G' | 'Y' | 'O' | 'R'
+export const RAINBOW_COLORS: RainbowColor[] = ['V','I','B','G','Y','O','R'];
 
 export const ALPHABET_TO_ASCII_LIST = [
     { firstLetter: [65, 97], lastLetter: [71, 103] },   // A: [ASCII OF 'A', ASCII OF 'a'], G: [ASCII OF 'A', ASCII OF 'a'],  (A to G as First Series)
@@ -7,7 +8,7 @@ export const ALPHABET_TO_ASCII_LIST = [
     { firstLetter: [86, 118], lastLetter: [90, 122] }   // V: [ASCII OF 'V', ASCII OF 'v'], Z: [ASCII OF 'Z', ASCII OF 'z'],  (V to Z as Fourth Series)
 ]
 
-export const RAINBOW_COLOR_STYLES = {
+export const RAINBOW_COLOR_STYLES: Record<RainbowColor, string> = {
     'V': 'text-violet-500',
     'I': 'text-indigo-600',
     'B': 'text-blue-400',

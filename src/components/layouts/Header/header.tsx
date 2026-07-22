@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router';
-import React from 'react';
 
-const Header = (props) => {
+const Header = () => {
 
     return (
         <div className={'pt-30 pb-15 flex justify-center items-center'}>

@@ -1,8 +1,8 @@
-import type { CryptoFieldInitialValues } from '../types/cryptoInputs';
+import type { CryptoFieldInputValues } from '../types/cryptoInputs';
 
 const useCryptoInputs = () => {
 
-    const initialValues: CryptoFieldInitialValues = {
+    const initialValues: CryptoFieldInputValues = {
         plainText: '',
         SQK1: 1,
         SQK2: 2,

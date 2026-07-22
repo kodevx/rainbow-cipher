@@ -27,7 +27,7 @@ const CryptoInputs: React.FC<CryptoInputProps> = (props) => {
                 validateOnChange={true}
                 validateOnBlur={true}
                 onSubmit={(values, actions) => {
-                    // console.log("Formik callback values: ",values);
+                    console.log("Formik callback values: ",values);
                     actions.setSubmitting(false);
                 }}
             >
