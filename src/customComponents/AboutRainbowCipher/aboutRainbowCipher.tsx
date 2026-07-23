@@ -175,7 +175,7 @@ const AboutRainbowCipher = () => {
             </div>
             <div className={'flex flex-col text-lg mt-20 md:mt-10'}>
                 <div>Rainbow Colors*: The initial letters of rainbow colors</div>
-                <div>SQK*: The sequence number for each series in any order</div>
+                <div>SQK* (Sequence Key): The sequence number for each series in any order</div>
             </div>
         </div>
     )
