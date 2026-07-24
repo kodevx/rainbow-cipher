@@ -33,7 +33,7 @@ const getRainbowColorToAsciiCodeMappings = () => {
                                 </span>
                                 <sup>*</sup> 
                             </th>
-                            <th className={'border-2 border-gray-300 px-7 py-4'}>ASCII Code</th>
+                            <th className={'border-2 border-gray-300 px-7 py-4'}>Alphabets</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,9 +58,9 @@ const getRainbowColorToAsciiCodeMappings = () => {
                                                     <span className={'mr-2'}>{String.fromCharCode(alphabetUppercaseAsciiCode + index)}</span>
                                                     /<span className={'ml-2'}>{String.fromCharCode(alphabetLowercaseAsciiCode + index)}</span>
                                                 </div>
-                                                <div>
+                                                {/* <div>
                                                     ({alphabetUppercaseAsciiCode + index} / {alphabetLowercaseAsciiCode + index})
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </td>
                                     </tr>
@@ -103,7 +103,7 @@ const AboutRainbowCipher = () => {
                         <div>J O H N  D O E</div>
                     </div>
                     <div className={'mt-3'}>
-                        <div className={'flex justify-center text-2xl lg:text-2xl xl:text-3xl'}>
+                        <div className={'flex justify-center tracking-widest text-2xl lg:text-2xl xl:text-2xl'}>
                             (P L A I N T E X T)
                         </div>
                     </div>
@@ -133,7 +133,7 @@ const AboutRainbowCipher = () => {
                         ⟺ 
                     </div>
                 </div>
-                <div className={'flex-col'}>
+                <div className={'flex-col flex justify-center items-center'}>
                     <div className={'flex justify-center text-4xl lg:text-4xl xl:text-3xl'}>
                         <div className={'flex'}>
                             <div className={`mr-2 ${RAINBOW_COLOR_STYLES['B']}`}>
@@ -166,8 +166,8 @@ const AboutRainbowCipher = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={'mt-5 text-2xl lg:text-2xl xl:text-3xl'}>
-                        <div className={'flex justify-center tracking-widest'}>
+                    <div className={'mt-5 text-2xl lg:text-2xl xl:text-2xl'}>
+                        <div className={'flex justify-center items-center tracking-widest'}>
                             (C I P H E R T E X T)
                         </div>
                     </div>
