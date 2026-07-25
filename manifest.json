@@ -1,0 +1,64 @@
+{
+  "id": "/?source=pwa",
+  "short_name": "Rainbow Cipher",
+  "name": "Rainbow Cipher",
+  "description": "Encrypt/Decrypt text using Rainbow Series Table",
+  "start_url": "/?source=pwa",
+  "background_color": "#dacfb0",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#dacfb0",
+  "icons": [
+    {
+      "src": "/icons/rcIcon_16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/rcIcon_24x24.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+
+    {
+      "src": "/icons/rcIcon_48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/rcIcon_120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/rcIcon_180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/rcIcon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/rcIcon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-pwa.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view"
+    },
+    {
+      "src": "/screenshots/mobile-pwa.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "label": "Mobile view"
+    }
+  ]
+}
