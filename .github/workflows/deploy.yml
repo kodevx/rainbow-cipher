@@ -19,7 +19,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: https://kodevx/rainbow-cipher/
+      url: https://kodevx.github.io/rainbow-cipher/
   
     steps:
     - name: Checkout the Repository
