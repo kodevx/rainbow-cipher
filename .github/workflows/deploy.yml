@@ -8,9 +8,18 @@ on:
   pull_request: 
     branches: [ "main" ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs: 
   build: 
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: https://kodevx/rainbow-cipher/
   
     steps:
     - name: Checkout the Repository
@@ -32,3 +41,14 @@ jobs:
     - name: Generate Project Build
       run: yarn build
 
+    - name: Setup GitHub Pages
+      uses: actions/configure-pages@v5
+
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3
+      with: 
+        path: ./dist
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
